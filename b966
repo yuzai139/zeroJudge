@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+#define F first
+#define S second             //巨集，少打字用
+using namespace std;
+int n,ans=0;
+deque<pair<int,int>>dq;      //雙向佇列，用pair< , >定義雙變數的deque，dq是名稱
+int main()
+{
+    cin>>n;
+    dq.assign(n,{});         //初始化dq
+    
+    for(int i=0;i<n;i++)
+    {
+        cin>>dq[i].F>>dq[i].S;
+    }
+    
+    sort(dq.begin(),dq.end());   //排列dq
+    
+    while(dq.size())             //dq裡還有資料就會進入while
+    {
+        if(dq.size()==1)
+        {
+            ans+=dq[0].S-dq[0].F;
+            dq.pop_front();         //刪除dq第一筆資料
+        }
+        else
+        {
+            if(dq[0].S>=dq[1].F)
+            {
+                dq[1].F=min(dq[1].F,dq[0].F);   
+                dq[1].S=max(dq[0].S,dq[1].S);
+                dq.pop_front();
+            }
+            else
+            {
+                ans+=dq[0].S-dq[0].F;
+                dq.pop_front();
+            }
+        }
+    }
+    cout<<ans;
+	return 0;
+}
