@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int k,n,cal=0;
+    
+    while(cin>>n)
+    {
+        cal=(n*n-n+2)/2;
+        cout<<cal<<endl;
+        
+    }
+    
+    
+    return 0;
+}
