@@ -2,48 +2,37 @@
 using namespace std;
 int main()
 {
-    int stunum=0;
+    int stunum;
+    int maxfalse=-1;
+    int minpass=101;
+    vector<int>v;
     cin>>stunum;
-    int stu[19];
-    int maxfalse,minpass;  
-    int a=0,b=0;   //判別及格
-    
-    for(int i=0;i<stunum;i++)      //輸入分數
+    v.assign(stunum,0);
+
+    for(int i=0;i<stunum;i++)         //輸入分數
     {
-        cin>>stu[i];
+        cin>>v[i];
     }
     
-    sort(stu,stu+stunum);          //排序
+    sort(v.begin(),v.end());          //排序
     
-    for(int i=0;i<stunum;i++)      //輸出排序後分數
+    for(int i:v)                      //輸出排序後分數，並且以60為界利用max和min選
     {
-        cout<<stu[i]<<" ";
+        cout<<i<<" ";
+        if(i<60)
+        maxfalse=max(maxfalse, i);
+        else
+        minpass=min(minpass, i);
     }
 
     cout<<endl;
     
-    for(int i=0;i<stunum;i++)      //判斷出最高分不及格數以及是否都及格
-    {
-        if(stu[i]<60)
-        {
-            maxfalse=stu[i];
-        }
-    }
-    
-    if(stu[0]>=60)
+    if(maxfalse==-1)
     cout<<"best case"<<endl;
     else
     cout<<maxfalse<<endl;
     
-    for(int i=stunum-1;i>=0;i--)   //判斷最低分及格和是否都不及格
-    {
-        if(stu[i]>=60)
-        {
-            minpass=stu[i];
-        }
-    }
-    
-    if(stu[stunum-1]<60)
+    if(minpass==101)
     cout<<"worst case"<<endl;
     else
     cout<<minpass<<endl;
