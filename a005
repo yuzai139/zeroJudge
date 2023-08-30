@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    int a,b,c,d;
+    cin>>t;
+    
+    while(t--)
+    {
+        cin>>a>>b>>c>>d;
+        cout<<a<<" "<<b<<" "<<c<<" "<<d<<" ";
+        
+        if(b-a==d-c)
+        cout<<d+(b-a)<<endl;
+        else if(b/a==d/c)
+        cout<<d*(b/a)<<endl;
+        else
+        cout<<"不是等比or等差";
+        
+    }
+    
+    
+    
+    
+	return 0;
+}
