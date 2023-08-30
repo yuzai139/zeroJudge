@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int times;
+    float arr[100];
+    float all;
+    
+    while(cin>>times)
+    {
+    for(int i=0;i<times;i++)
+    {
+        cin>>arr[i];
+        all=all+arr[i]; 
+    }
+    
+    float ans=all/times;
+
+    if(ans<=59)
+    cout<<"yes"<<endl;
+    else
+    cout<<"no"<<endl;
+    all=0;
+    }
+  
+    return 0;
+}
