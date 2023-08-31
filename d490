@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int start,end;
+	cin>>start>>end;
+	int ans=0;
+if(start%2==1||start==1)
+{
+	   int a=(start+1)/2;
+	   int b=end/2;
+	   for(int i=a;i<=b;i++)
+	   ans=ans+i*2;
+	   	cout<<ans;
+}
+else
+{
+    int a=start/2;
+	   int b=end/2;
+	   for(int i=a;i<=b;i++)
+	   ans=ans+i*2;
+	cout<<ans;
+}
+return 0;
+}
