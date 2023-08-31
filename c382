@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int n1,n2;
+    char sybol;
+    cin>>n1>>sybol>>n2;
+    switch(sybol)
+    {
+        case '+':
+        cout<<n1+n2<<endl;
+        break;
+        
+        case '-':
+        cout<<n1-n2<<endl;
+        break;
+        
+        case '*':
+        cout<<n1*n2<<endl;
+        break;
+        
+        case '/':
+        cout<<n1/n2<<endl;
+        break;
+        
+        default:
+        break;
+    }
+    
+    return 0;                     
+}
