@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    string name;
+    cin>>name;
+    string output;
+    
+    for(int i=0;i<name.length();i++)
+    {
+        output+=name[i];
+        if(i<name.length()-1)
+        output+="-";
+    }
+    cout<<output;
+    return 0;
+}
