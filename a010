@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int input;
+    cin>>input;
+    int mxinput=input;
+    
+    bool first=true;
+    for(int i=2;i<=mxinput;i++)
+     {
+         int a=0;
+       while(input%i==0)            //因為要持續除以i，用if不能滿足
+        {
+            input/=i;
+            a++;
+        }
+        
+        if(a>=1)
+        {
+           
+           if(!first)              //運用布林作出只通過一次的指令
+           {
+               cout<<" * ";
+           }
+           first=false;           
+           if(a>1)
+           {
+               cout<<i<<"^"<<a;
+           }
+           else
+           cout<<i;
+        }
+        
+        
+     }
+    return 0;                     /*根本不需要判斷質數，
+                                 從小往上除自然就都是質數了。 */
+}
